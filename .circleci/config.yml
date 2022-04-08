@@ -1,0 +1,16 @@
+version:2.1
+jobs:
+
+  start_sample:
+  workingdirectory: ~/currency-convertor
+  docker:
+    -image: cimg/base:2021.04
+  steps:
+    -checkout
+    -run
+    name:sampl_runcommand
+    command:npm run start
+workflows:
+  start:
+    jobs:
+      -start_sample
