@@ -1,6 +1,5 @@
 version:2.1
 jobs:
-
   start_sample:
   workingdirectory: ~/currency-convertor
   docker:
@@ -8,8 +7,8 @@ jobs:
   steps:
     -checkout
     -run
-    name:sampl_runcommand
-    command:npm run start
+    name: sampl_runcommand
+    command: npm run start
 workflows:
   start:
     jobs:
