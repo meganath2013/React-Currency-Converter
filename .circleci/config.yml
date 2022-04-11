@@ -2,20 +2,20 @@ version: 2.1
 
 jobs:
   build:
-    machine:
-      image: ubuntu/default
+    docker:
+      image: cimg/base:latest
       #ubuntu-2004:202010-01
     steps:
       - checkout
-      - run:
-          name: Installing AWS CLI
-          command: |
-            sudo apt-get update
-            sudo apt install python3-pip
-            sudo pip3 install awsebcli --upgrade
+      #- run:
+          #name: Installing AWS CLI
+          #command: |
+            #sudo apt-get update
+            #sudo apt install python3-pip
+            #sudo pip3 install awsebcli --upgrade
       - run: 
             npm install && npm run build
-      - run: aws s3 sync ./build s3://myfirsts3maggi
+      #- run: aws s3 sync ./build s3://myfirsts3maggi
       # - persist_to_workspace:
       #      root: .
       #      paths:
