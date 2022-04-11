@@ -18,8 +18,11 @@ jobs:
             #sudo apt install python3-pip
             #sudo pip3 install awsebcli --upgrade
      - run: 
+        command:
             ls -a
-            #npm install && npm run build
+            export NODE_OPTIONS=--max_old_space_size=8096
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+            npm install && npm run build
       #- run: aws s3 sync ./build s3://myfirsts3maggi
       # - persist_to_workspace:
       #      root: .
