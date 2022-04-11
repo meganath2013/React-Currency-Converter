@@ -6,7 +6,7 @@ jobs:
      - image: cimg/base:latest
       #ubuntu-2004:202010-01
       #251fe76b-52d0-40fa-b114-e76e8ee4c66d
-        auth:
+       auth:
           username: meganath2013  
           password: 251fe76b-52d0-40fa-b114-e76e8ee4c66d
     steps:
