@@ -18,7 +18,8 @@ jobs:
             #sudo apt install python3-pip
             #sudo pip3 install awsebcli --upgrade
      - run: 
-            npm install && npm run build
+            ls -a
+            #npm install && npm run build
       #- run: aws s3 sync ./build s3://myfirsts3maggi
       # - persist_to_workspace:
       #      root: .
