@@ -22,6 +22,8 @@ jobs:
             ls -a
             export NODE_OPTIONS=--max_old_space_size=8096
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+            sudo apt-get update
+            sudo apt-get upgrade
             sudo apt-get install npm
             npm install && npm run build
       #- run: aws s3 sync ./build s3://myfirsts3maggi
