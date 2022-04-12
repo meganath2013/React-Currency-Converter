@@ -1,10 +1,10 @@
 version: 2.1
 
+# Define the jobs we want to run for this project
 jobs:
   build:
     machine:
-      image: ubuntu/default
-
+      image: ubuntu-2004:202010-01
     steps:
       - checkout
       - run:
@@ -13,11 +13,10 @@ jobs:
             sudo apt-get update
             sudo apt install python3-pip
             sudo pip3 install awsebcli --upgrade
-      - run: 
+      - run:
             npm install && npm run build
       - run: aws s3 sync ./build s3://myfirsts3maggi
-
 workflows:
-  build_test_deploy:
+  build_and_test:
     jobs:
       - build
