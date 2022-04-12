@@ -7,7 +7,7 @@ jobs:
 
     steps:
       - checkout
-      - run:
+       - run:
           name: Installing AWS CLI
           command: |
             sudo apt-get update
