@@ -7,16 +7,16 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - checkout
-       - run:
+       - run: 
           name: Installing AWS CLI
           command: |
             sudo apt-get update
             sudo apt install python3-pip
             sudo pip3 install awsebcli --upgrade
-      - run:
+      - run: 
             npm install && npm run build
       - run: aws s3 sync ./build s3://myfirsts3maggi
 workflows:
   build_and_test:
-    jobs:
+    jobs: 
       - build
